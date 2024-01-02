@@ -1,0 +1,254 @@
+.wrap {
+  width: 100%;
+}
+.main-visual {
+  width: 100%;
+	overflow: hidden;
+	padding-bottom: 55%;
+  img {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    max-width: 110%;
+    width: 100%;
+    transform: translateX(-50%);
+  }
+}
+.header {
+  width: 100%;
+  position: sticky;
+  border-bottom: 1px solid #eee;
+  top: 0;
+  background: #fff;
+  z-index: 22;
+  .inner__wrap {
+    padding: 0px 16px;   
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    h1 {
+      @include fontoption(20px,#000,500,26px);
+    }
+    .el-menu--horizontal {
+      border-bottom: 0;
+    }
+  }  
+}
+.main-container {
+  position: relative;
+  .main-weather {
+    position: absolute;
+    width: 400px;
+    left: 5%;
+    top:5%;
+    z-index: 10;
+  }
+}
+.main-swiper {
+  width: 100%;
+  max-height: 980px;
+  min-height: 500px;
+  overflow: hidden;
+  position: relative;
+  .swiper-slide {
+    .swiper-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      .inner-text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 25%;
+        text-align: center;
+        h3 {
+          width: 100%;
+          @include fontoption(28px, #fff, 700, 30px);
+          text-align: center;
+        }
+        p {          
+          width: 100%;
+          @include fontoption(16px, #fff, 500, 25px);
+          text-align: center;
+          max-width: 80%;
+          margin: 15px auto 0;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      max-width: initial;
+      height: 100%;
+    }
+  }
+}
+.content-wrap {
+  display: flex;
+  height: calc(100% - 100px);
+  flex-direction: column;
+  padding: 30px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.movie-post__slide {
+  margin-bottom: 50px;
+}
+.movie-card__wrap {
+  padding: 100px 0;
+}
+.online-request__wrap {
+  padding: 100px 0;
+}
+.biz-card__wrap {
+  padding: 100px 0;
+}
+.biz-list{
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 50px auto;
+  li {
+    width: calc(100% / 3);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    gap: 0px;
+    .icon {
+      width: 150px;
+      height: 150px;
+      background-color: #f2f2f2;
+      border-radius: 50%     
+    }
+    .title {
+      margin-top: 30px;
+      @include fontoption(18px, #000, 500, 25px);
+    }
+    .description {
+      margin-top: 5px;
+      @include fontoption(14px, #000, 400, 20px);
+      @include ellipsis($line: 3);
+    }    
+  }
+}
+
+// animation
+.slideup {
+  transform: translateY(25%);
+  opacity: 0;
+}
+
+.slideInUp {  
+  -webkit-animation-name: slideInUp;  
+  animation-name: slideInUp;  
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(25%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(25%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+}
+
+.slide-up {
+  transition: all 0.25s;
+}
+
+.slide-up-enter-active {
+  transition: all 0.25s ease;
+}
+
+.slide-up-leave-active {
+  transition: all 0.25s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-up-enter,
+.slide-up-leave-active {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+// .zoomIn {
+//   animation-name: zoomIn;
+//   transition: all 0.25s;
+// }
+@keyframes zoomIn {
+  0% {
+      opacity: 0;
+      background-size: 120% 120%;
+  }
+  100% {
+      opacity: 1;
+      background-size: 100% 100%;
+  }
+}
+
+// rotate
+@-webkit-keyframes rotateLeft {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0%, 0, 0);
+      transform: translate3d(0%, 0, 0);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+}
+
+@keyframes rotateLeft {
+  0% {
+      opacity: 0;
+      -webkit-transform: rotate(8deg);
+      transform: rotate(8deg);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: rotate(-8deg);
+      transform: rotate(-8deg);
+  }
+}
+
+@keyframes rotateRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: rotate(-8deg);
+      transform: rotate(-8deg);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: rotate(8deg);
+      transform: rotate(8deg);
+  }
+}
+@keyframes shine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}

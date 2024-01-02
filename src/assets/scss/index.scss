@@ -1,0 +1,19 @@
+@use "element-plus/dist/index.css";
+@import '@/assets/scss/common/_variables.scss';
+@import '@/assets/scss/common/base.scss';
+@import '@/assets/scss/components/titlecmp.scss';
+@import '@/assets/scss/components/button.scss';
+@import '@/assets/scss/components/modal.scss';
+@import '@/assets/scss/components/tab.scss';
+@import '@/assets/scss/components/form.scss';
+@import '@/assets/scss/components/_input.scss';
+@import '@/assets/scss/components/_table.scss';
+@import '@/assets/scss/components/_loadingDot.scss';
+@import '@/assets/scss/components/_layer.scss';
+// @import '@/assets/scss/components/icon.scss';
+// @import '@/assets/scss/components/typography.scss';
+
+// 메뉴별
+@import '@/assets/scss/views/layout.scss';
+@import '@/assets/scss/views/cmp.scss';
+

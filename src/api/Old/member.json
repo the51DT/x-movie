@@ -1,0 +1,8 @@
+{"users": [
+    {"userId": "manage", "password": "1234", "name": "manage", "uploaded": [{}],"liked": [{}], "subscribed": [{}]},
+    {"userId": "hong", "password": "1234",  "name": "홍길동", "uploaded": [{}],"liked": [{}], "subscribed": [{}]},
+    {"userId": "bom", "password": "1234",  "name": "최봄", "uploaded": [{}],"liked": [{}], "subscribed": [{}]},
+    {"userId": "bea", "password": "1234",  "name": "배정현", "uploaded": [{}],"liked": [{}], "subscribed": [{}]},
+    {"userId": "chulsoo", "password": "1234",  "name": "배철수", "uploaded": [{}],"liked": [{}], "subscribed": [{}]},
+    {"userId": "hyejin", "password": "1234",  "name": "김혜진", "uploaded": [{}],"liked": [{}], "subscribed": [{}]}
+]}
