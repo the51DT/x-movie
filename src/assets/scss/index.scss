@@ -1,4 +1,4 @@
-@use "element-plus/dist/index.css";
+@use 'element-plus/dist/index.css';
 @import '@/assets/scss/common/_variables.scss';
 @import '@/assets/scss/common/base.scss';
 @import '@/assets/scss/components/titlecmp.scss';
@@ -10,10 +10,11 @@
 @import '@/assets/scss/components/_table.scss';
 @import '@/assets/scss/components/_loadingDot.scss';
 @import '@/assets/scss/components/_layer.scss';
+@import '@/assets/scss/components/contentSlide.scss';
+@import '@/assets/scss/components/inputBox.scss';
 // @import '@/assets/scss/components/icon.scss';
 // @import '@/assets/scss/components/typography.scss';
 
 // 메뉴별
 @import '@/assets/scss/views/layout.scss';
 @import '@/assets/scss/views/cmp.scss';
-

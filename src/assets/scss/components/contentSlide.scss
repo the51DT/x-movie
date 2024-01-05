@@ -1,0 +1,276 @@
+.swiper {
+  .x-slide {
+    &__container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: rem(12px);
+      overflow: hidden;
+    }
+  }
+
+  &.x-slide {
+    // slide type
+    &--wide {
+      overflow: visible;
+      margin: 0 rem(40px);
+      .swiper-slide {
+        border-radius: rem(16px);
+        overflow: hidden;
+      }
+      .visual-box__text {
+        position: absolute;
+        left: rem(16px);
+        bottom: rem(16px);
+        // 아래로는 영역 노출을 위한 임의값입니다. 데이터 적용 시 아래 내용 삭제해야합니다.
+        // background: rgba(225, 225, 225, 0.5);
+        // width: calc(100% - 2rem);
+        // height: 200px;
+        .visual-box__title {
+          font-size: rem(16px);
+        }
+        .visual-box__desc {
+          color: #fff;
+          font-size: rem(12px);
+        }
+      }
+    }
+    &--poster {
+      .x-slide__container {
+        background: #252836;
+      }
+      .visual-box__text {
+        padding: rem(12px) rem(8px) rem(8px);
+      }
+    }
+    &--categories {
+    }
+    &--actors {
+    }
+    // slide content
+  }
+}
+.visual-box {
+  width: 100%;
+  height: 100%;
+  &__img {
+    img {
+      display: block;
+      width: 100%;
+      // object-fit: cover;
+    }
+  }
+  &__score {
+    position: absolute;
+    top: rem(8px);
+    right: rem(8px);
+    padding: rem(8px);
+    border-radius: rem(8px);
+    background: rgba(37, 40, 54, 0.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(4px);
+    &__icon {
+      display: block;
+      width: rem(16px);
+      height: rem(16px);
+      background: url('../../../../public/images/icon/icon-movie-score.svg')
+        center no-repeat;
+    }
+    &__text {
+      display: block;
+      color: #ff8700;
+      font-size: rem(12px);
+      line-height: 1;
+    }
+  }
+  &__text {
+    color: #fff;
+  }
+  &__title {
+    @include ellipsis(1);
+    font-size: rem(14px);
+    line-height: 1;
+    & + .visual-box__desc {
+      margin-top: rem(4px);
+    }
+  }
+  &__desc {
+    color: #92929d;
+    font-size: rem(10px);
+    &__info {
+      &-genre {
+      }
+      &-release {
+      }
+      &-others {
+      }
+    }
+  }
+}
+.x-title-area {
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    & + .x-title-area__container {
+      margin-top: rem(8px);
+    }
+  }
+  &__title {
+    color: #fff;
+    font-size: rem(16px);
+    line-height: 1;
+  }
+  &__util {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    width: 100%;
+    &__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: rem(4px);
+      padding: rem(2px) 0;
+      color: #92929d;
+      font-size: rem(12px);
+      line-height: 1;
+      & + .x-title-area__util__item {
+        padding-left: rem(8px);
+        border-left: rem(1px) solid #696974;
+      }
+      &::before {
+        display: block;
+        content: '';
+        clear: both;
+        width: rem(16px);
+        height: rem(16px);
+      }
+      &--release::before {
+        background: url('../../../../public/images/icon/icon-movie-calendar.svg')
+          no-repeat center / 100% auto;
+      }
+      &--genre::before {
+        background: url('../../../../public/images/icon/icon-movie-film.svg')
+          no-repeat center / 100% auto;
+      }
+      &--time::before {
+        background: url('../../../../public/images/icon/icon-movie-clock.svg')
+          no-repeat center / 100% auto;
+      }
+      &--grade::before {
+        display: none;
+      }
+    }
+  }
+  & + .x-slide {
+    margin-top: rem(16px);
+  }
+}
+.x-button-box {
+  .button {
+    &--type-text {
+    }
+    &--type-link {
+      color: #12cdd9;
+    }
+    &--type-bg {
+      padding: rem(18px) rem(24px);
+      width: 100%;
+      color: #fff;
+      background: #12cdd9;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: rem(32px);
+      border: rem(1px) solid #12cdd9;
+    }
+    &--type-icon {
+      .button__text {
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        color: #fff;
+        background-color: rgb(0, 0, 0);
+      }
+    }
+    &__text {
+      display: block;
+      font-size: rem(14px);
+      line-height: 1;
+    }
+  }
+}
+.x-item-list {
+  li {
+    position: relative;
+  }
+}
+.x-member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__info {
+    display: flex;
+    align-items: center;
+
+    &__photo {
+      &__img-box {
+        width: rem(40px);
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    &__text {
+      padding-left: rem(16px);
+      &__nickname {
+        display: block;
+        color: #fff;
+        font-size: rem(16px);
+        line-height: rem(20px);
+      }
+      &__desc {
+        display: block;
+        color: #92929d;
+        font-size: rem(12px);
+        line-height: rem(15px);
+      }
+    }
+  }
+
+  &__util {
+    .x-button-box {
+      .button.button--type-icon {
+        position: relative;
+        display: block;
+        width: rem(32px);
+        height: rem(32px);
+        background: #252836;
+        border-radius: 50%;
+        &::after {
+          display: block;
+          content: '';
+          z-index: 1;
+          clear: both;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: rem(24px);
+          height: rem(24px);
+          transform: translate(-50%, -50%);
+          background: url('../../../../public/images/icon/icon-movie-heart.svg')
+            no-repeat center / 100% auto;
+        }
+      }
+    }
+  }
+}

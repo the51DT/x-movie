@@ -1,42 +1,45 @@
-const BASE_URL = 'https://www.omdbapi.com';
+import axios from 'axios'
+import { ref } from 'vue'
+const MovieBaseUrl = 'https://api.themoviedb.org/3/movie/'
+const MovieKey = 'd2bb40d5b45665c9a72ed5938162a943'
 
-const option = {
-  get: () => ({
-    headers: {
-      // 'Content-Type': 'application/json',
-    },
-  }),
-  post: contents => ({
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(contents),
-  }),
-};
+const getMovie = () => {
+  const nowPlayingList = ref([])
+  const popularList = ref([])
 
-const request = async (url, option = {}) => {
-  try {
-    const response = await fetch(`${BASE_URL}${url}`, option);
-
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
-
-    return await response.json();
-  } catch (error) {
-    alert(`💣 API Request Error - ${error} 💣`);
+  const nowPlaying = async () => {
+    axios
+      .get(
+        `${MovieBaseUrl}now_playing?api_key=${MovieKey}&language=ko-KR&append_to_response=images,videos`,
+      )
+      .then((res) => {
+        console.log(res.data)
+        res.data.results.forEach((result) => {
+          nowPlayingList.value.push(result)
+        })
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
   }
-};
 
-export const API = {
-  getMovies: (keyword, pageNumber = 1) => {
-    return request(
-      `?apikey=7035c60c&s=${keyword}&page=${pageNumber}`,
-      option.get()
-    );
-  },
-  getMovieDetail: id => {
-    return request(`?apikey=7035c60c&i=${id}&plot=plot`, option.get());
-  },
-};
+  const popularL = () => {
+    axios
+      .get(
+        `${MovieBaseUrl}popular?api_key=${MovieKey}&language=ko-KR&append_to_response=images,videos`,
+      )
+      .then((res) => {
+        console.log(res.data)
+        res.data.results.forEach((result) => {
+          nowPlayingList.value.push(result)
+        })
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
+  }
+  return { nowPlayingList, popularList, nowPlaying, popularL }
+}
+export default getMovie
